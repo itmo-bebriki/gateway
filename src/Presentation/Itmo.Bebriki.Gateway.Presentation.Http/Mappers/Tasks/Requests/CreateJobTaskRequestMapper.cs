@@ -1,4 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;
@@ -13,7 +14,7 @@ internal static class CreateJobTaskRequestMapper
             DeadLine = request.Deadline?.ToTimestamp(),
             DependOnTaskIds = { request.DependsOnTaskIds },
             Description = request.Description,
-            Priority = request.Priority,
+            Priority = JobTaskPriorityMapper.FromInternal(request.Priority),
             Title = request.Title,
         };
     }

@@ -1,4 +1,4 @@
-using Itmo.Bebriki.Tasks.Contracts;
+using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
