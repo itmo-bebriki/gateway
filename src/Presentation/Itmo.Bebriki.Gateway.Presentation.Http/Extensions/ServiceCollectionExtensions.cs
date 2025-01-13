@@ -32,6 +32,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<TaskClient>();
         services.AddSingleton<BoardClient>();
+        services.AddSingleton<TopicClient>();
 
         return services;
     }

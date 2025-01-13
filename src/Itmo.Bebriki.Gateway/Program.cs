@@ -1,5 +1,6 @@
 #pragma warning disable CA1506
 
+using Itmo.Bebriki.Gateway.Presentation.Http.Extensions;
 using Itmo.Dev.Platform.Common.Extensions;
 using Itmo.Dev.Platform.Observability;
 using Microsoft.Extensions.Options;
@@ -16,6 +17,7 @@ builder.AddPlatformObservability();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
 builder.Services.ConfigureSwaggerGen(opt => opt.UseOneOfForPolymorphism());
+builder.Services.AddGateway();
 
 builder.Services.AddUtcDateTimeProvider();
 
