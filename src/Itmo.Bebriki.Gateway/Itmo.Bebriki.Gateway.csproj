@@ -1,14 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <ItemGroup>
-        <ProjectReference Include="..\Application\Itmo.Bebriki.Gateway.Application\Itmo.Bebriki.Gateway.Application.csproj"/>
-        <ProjectReference Include="..\Infrastructure\Itmo.Bebriki.Gateway.Infrastructure.Persistence\Itmo.Bebriki.Gateway.Infrastructure.Persistence.csproj"/>
-        <ProjectReference Include="..\Presentation\Itmo.Bebriki.Gateway.Presentation.Grpc\Itmo.Bebriki.Gateway.Presentation.Grpc.csproj"/>
         <ProjectReference Include="..\Presentation\Itmo.Bebriki.Gateway.Presentation.Http\Itmo.Bebriki.Gateway.Presentation.Http.csproj" />
-        <ProjectReference Include="..\Presentation\Itmo.Bebriki.Gateway.Presentation.Kafka\Itmo.Bebriki.Gateway.Presentation.Kafka.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Google.Protobuf" />
         <PackageReference Include="Itmo.Dev.Platform.Observability" />
         <PackageReference Include="Itmo.Dev.Platform.BackgroundTasks.Hangfire.Postgres" />
         <PackageReference Include="Itmo.Dev.Platform.BackgroundTasks.Postgres" />
