@@ -3,7 +3,7 @@ using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;
 
-internal class CreateJobTaskRequestMapper
+internal static class CreateJobTaskRequestMapper
 {
     internal static Itmo.Bebriki.Tasks.Contracts.CreateJobTaskRequest FromInternal(CreateJobTaskRequest request)
     {

@@ -31,6 +31,7 @@ public static class ServiceCollectionExtensions
     private static IServiceCollection AddInternalClients(this IServiceCollection services)
     {
         services.AddSingleton<TaskClient>();
+        services.AddSingleton<BoardClient>();
 
         return services;
     }

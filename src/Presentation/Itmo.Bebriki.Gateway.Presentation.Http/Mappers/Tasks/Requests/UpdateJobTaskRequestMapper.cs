@@ -4,7 +4,7 @@ using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;
 
-internal class UpdateJobTaskRequestMapper
+internal static class UpdateJobTaskRequestMapper
 {
     internal static Itmo.Bebriki.Tasks.Contracts.UpdateJobTaskRequest FromInternal(
         long id,
