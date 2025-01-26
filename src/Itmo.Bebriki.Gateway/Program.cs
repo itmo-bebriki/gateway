@@ -15,11 +15,24 @@ builder.Services.AddPlatform();
 builder.AddPlatformObservability();
 
 builder.Services.AddControllers();
+
 builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
-builder.Services.ConfigureSwaggerGen(opt => opt.UseOneOfForPolymorphism());
+
 builder.Services.AddGateway();
 
 builder.Services.AddUtcDateTimeProvider();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "AllowAllOrigin",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
 
 WebApplication app = builder.Build();
 
