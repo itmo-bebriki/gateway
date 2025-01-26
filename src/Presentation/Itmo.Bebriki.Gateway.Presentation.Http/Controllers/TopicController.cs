@@ -54,7 +54,7 @@ public class TopicController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}/tasks")]
+    [HttpPost("{id}/tasks")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
