@@ -54,7 +54,7 @@ public class BoardsController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}/topics")]
+    [HttpPost("{id}/topics")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

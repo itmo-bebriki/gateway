@@ -54,7 +54,7 @@ public class TasksController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}/deps")]
+    [HttpPost("{id}/deps")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

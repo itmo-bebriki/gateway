@@ -6,7 +6,7 @@ public sealed record GetAnalyticsResponse(
     DateTimeOffset? CreatedAt,
     DateTimeOffset? LastUpdate,
     DateTimeOffset? StartedAt,
-    long TimeSpent, // using TimeSpan with OneOfForPolymorphism setting breaks Swagger, unfortunately.
+    long? TimeSpent, // using TimeSpan with OneOfForPolymorphism setting breaks Swagger, unfortunately.
     JobTaskPriority HighestPriority,
     JobTaskState CurrentState,
     int AmountOfAgreements,
