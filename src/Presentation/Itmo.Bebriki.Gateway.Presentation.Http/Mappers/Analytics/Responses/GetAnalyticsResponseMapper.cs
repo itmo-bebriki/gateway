@@ -11,7 +11,7 @@ internal static class GetAnalyticsResponseMapper
             CreatedAt: response.CreatedAt?.ToDateTimeOffset(),
             LastUpdate: response.LastUpdate?.ToDateTimeOffset(),
             StartedAt: response.StartedAt?.ToDateTimeOffset(),
-            TimeSpent: (long)response.TimeSpent.ToTimeSpan().TotalSeconds,
+            TimeSpent: (long?)response.TimeSpent?.ToTimeSpan().TotalSeconds,
             HighestPriority: JobTaskPriorityAnalyticsMapper.ToInternal(response.HighestPriority),
             CurrentState: JobTaskStateAnalyticsMapper.ToInternal(response.CurrentState),
             AmountOfAgreements: response.AmountOfAgreements,
