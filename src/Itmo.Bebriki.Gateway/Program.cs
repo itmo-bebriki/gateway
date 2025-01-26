@@ -25,16 +25,18 @@ builder.Services.AddUtcDateTimeProvider();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(
-        "AllowAllOrigin",
-        builder =>
+        "AllowAnyOrigin",
+        policyBuilder =>
         {
-            builder.AllowAnyOrigin()
+            policyBuilder.AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         });
 });
 
 WebApplication app = builder.Build();
+
+app.UseCors("AllowAnyOrigin");
 
 app.UseRouting();
 app.UseSwagger();
