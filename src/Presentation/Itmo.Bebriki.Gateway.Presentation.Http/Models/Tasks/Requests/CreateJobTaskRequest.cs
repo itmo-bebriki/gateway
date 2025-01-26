@@ -25,6 +25,7 @@ public class CreateJobTaskRequest
     [BindProperty(Name = "depends_on_task_ids")]
     public long[] DependsOnTaskIds { get; set; } = [];
 
+    [Required]
     [BindProperty(Name = "deadline")]
     public DateTimeOffset? Deadline { get; set; }
 }

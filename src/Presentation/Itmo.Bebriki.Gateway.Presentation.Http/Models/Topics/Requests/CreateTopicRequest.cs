@@ -13,7 +13,6 @@ public class CreateTopicRequest
     [BindProperty(Name = "description")]
     public string Description { get; set; } = string.Empty;
 
-    [MinLength(1)]
     [BindProperty(Name = "task_ids")]
     public long[] TaskIds { get; set; } = [];
 }
