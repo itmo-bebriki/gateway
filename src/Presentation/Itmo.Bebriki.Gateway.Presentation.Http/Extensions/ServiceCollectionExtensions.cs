@@ -25,6 +25,12 @@ public static class ServiceCollectionExtensions
         services.AddOptions<ClientConfiguration>("topic_service")
             .BindConfiguration("Client:Configuration:TopicService");
 
+        services.AddOptions<ClientConfiguration>("analytics_service")
+            .BindConfiguration("Client:Configuration:AnalyticsService");
+
+        services.AddOptions<ClientConfiguration>("history_service")
+            .BindConfiguration("Client:Configuration:HistoryService");
+
         return services;
     }
 
@@ -33,6 +39,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<TaskClient>();
         services.AddSingleton<BoardClient>();
         services.AddSingleton<TopicClient>();
+        services.AddSingleton<AnalyticsClient>();
+        services.AddSingleton<HistoryClient>();
 
         return services;
     }
@@ -55,6 +63,18 @@ public static class ServiceCollectionExtensions
         {
             IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("topic_service").Address);
+        });
+
+        services.AddGrpcClient<Analytics.Grpc.Contracts.TaskAnalyticsService.TaskAnalyticsServiceClient>((provider, opts) =>
+        {
+            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            opts.Address = new Uri(options.Get("analytics_service").Address);
+        });
+
+        services.AddGrpcClient<Analytics.Grpc.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient>((provider, opts) =>
+        {
+            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            opts.Address = new Uri(options.Get("history_service").Address);
         });
 
         return services;

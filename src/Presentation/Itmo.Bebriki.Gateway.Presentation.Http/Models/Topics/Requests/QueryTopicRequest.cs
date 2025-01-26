@@ -19,6 +19,7 @@ public class QueryTopicRequest
     public long? Cursor { get; set; }
 
     [Required]
+    [Range(1, int.MaxValue)]
     [BindProperty(Name = "page_size")]
     public int PageSize { get; set; }
 }

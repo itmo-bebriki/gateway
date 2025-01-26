@@ -17,6 +17,7 @@ builder.AddPlatformObservability();
 builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
+builder.Services.ConfigureSwaggerGen(opt => opt.UseOneOfForPolymorphism());
 
 builder.Services.AddGateway();
 
