@@ -1,10 +1,12 @@
 #pragma warning disable CA1506
 
 using Itmo.Bebriki.Gateway.Presentation.Http.Extensions;
+using Itmo.Bebriki.Gateway.Presentation.Http.Middlewares;
 using Itmo.Dev.Platform.Common.Extensions;
 using Itmo.Dev.Platform.Observability;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,11 @@ builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<JsonSerialize
 builder.Services.AddPlatform();
 builder.AddPlatformObservability();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
 builder.Services.ConfigureSwaggerGen(opt => opt.UseOneOfForPolymorphism());
@@ -42,6 +48,8 @@ app.UseCors("AllowAnyOrigin");
 app.UseRouting();
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseMiddleware<GrpcExceptionHandlingMiddleware>();
 
 app.UsePlatformObservability();
 
