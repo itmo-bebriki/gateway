@@ -14,9 +14,6 @@ public class UpdateJobTaskRequest
     [BindProperty(Name = "assignee_id")]
     public long? AssigneeId { get; set; }
 
-    [BindProperty(Name = "state")]
-    public JobTaskState? State { get; set; }
-
     [BindProperty(Name = "priority")]
     public JobTaskPriority? Priority { get; set; }
 
