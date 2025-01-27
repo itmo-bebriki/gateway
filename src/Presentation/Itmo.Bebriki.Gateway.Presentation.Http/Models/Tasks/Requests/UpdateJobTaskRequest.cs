@@ -22,7 +22,4 @@ public class UpdateJobTaskRequest
 
     [BindProperty(Name = "deadline")]
     public DateTimeOffset? Deadline { get; set; }
-
-    [BindProperty(Name = "is_agreed")]
-    public bool? IsAgreed { get; set; }
 }
