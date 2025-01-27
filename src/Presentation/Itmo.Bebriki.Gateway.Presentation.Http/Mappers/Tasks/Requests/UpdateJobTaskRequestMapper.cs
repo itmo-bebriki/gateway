@@ -1,5 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Enums;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;
@@ -16,14 +16,10 @@ internal static class UpdateJobTaskRequestMapper
             Title = request.Title,
             Description = request.Description,
             AssigneeId = request.AssigneeId,
-            State = request.State is not null
-                ? JobTaskStateMapper.FromInternal(request.State.Value)
-                : Bebriki.Tasks.Contracts.JobTaskState.Unspecified,
             Priority = request.Priority is not null
                 ? JobTaskPriorityMapper.FromInternal(request.Priority.Value)
-                : Bebriki.Tasks.Contracts.JobTaskPriority.Unspecified,
+                : Bebriki.Enums.JobTaskPriority.Unspecified,
             DeadLine = request.Deadline?.ToTimestamp(),
-            IsAgreed = request.IsAgreed,
         };
     }
 }

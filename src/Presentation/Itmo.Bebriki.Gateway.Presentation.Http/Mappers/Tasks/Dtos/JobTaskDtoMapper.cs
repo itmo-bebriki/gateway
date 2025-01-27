@@ -1,4 +1,4 @@
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Enums;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Dtos;
 using System.Collections.Immutable;
 
@@ -18,7 +18,6 @@ internal static class JobTaskDtoMapper
             Priority = JobTaskPriorityMapper.ToInternal(dto.Priority),
             DependOnJobTaskIds = dto.DependOnTaskIds.ToImmutableHashSet(),
             DeadLine = dto.DeadLine.ToDateTimeOffset(),
-            IsAgreed = dto.IsAgreed,
             UpdatedAt = dto.UpdatedAt.ToDateTimeOffset(),
         };
     }

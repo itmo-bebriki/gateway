@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf ProtoRoot="protos" Include="protos\**\*.proto" GrpcServices="Client"/>
+        <Protobuf Include="protos\**\*.proto" GrpcServices="Client" ProtoRoot="protos"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -15,6 +15,11 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mappers\Agreements\" />
+      <Folder Include="Models\Agreements\" />
     </ItemGroup>
     
 </Project>

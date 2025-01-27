@@ -65,13 +65,13 @@ public static class ServiceCollectionExtensions
             opts.Address = new Uri(options.Get("topic_service").Address);
         });
 
-        services.AddGrpcClient<Analytics.Grpc.Contracts.TaskAnalyticsService.TaskAnalyticsServiceClient>((provider, opts) =>
+        services.AddGrpcClient<Analytics.TaskAnalyticsService.TaskAnalyticsServiceClient>((provider, opts) =>
         {
             IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("analytics_service").Address);
         });
 
-        services.AddGrpcClient<Analytics.Grpc.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient>((provider, opts) =>
+        services.AddGrpcClient<Analytics.HistoryAnalyticsService.HistoryAnalyticsServiceClient>((provider, opts) =>
         {
             IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("history_service").Address);

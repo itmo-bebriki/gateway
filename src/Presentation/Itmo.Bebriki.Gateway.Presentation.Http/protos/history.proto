@@ -1,12 +1,13 @@
 syntax = "proto3";
 
-option csharp_namespace = "Itmo.Bebriki.Analytics.Grpc.Contracts";
+option csharp_namespace = "Itmo.Bebriki.Analytics";
 
-package itmo.bebriki.analytics.grpc;
+package itmo.bebriki.analytics;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 import "analytics.proto";
+import "enums.proto";
 
 service HistoryAnalyticsService {
   rpc GetHistory(GetHistoryRequest) returns (GetHistoryResponse);
@@ -41,7 +42,7 @@ message Payload {
     string title = 2;
     string description = 3;
     int64 assignee_id = 4;
-    itmo.bebriki.analytics.grpc.JobTaskPriority priority = 5;
+    JobTaskPriority priority = 5;
     repeated int64 depends_on_ids = 6;
     google.protobuf.Timestamp deadline = 7;
     google.protobuf.Timestamp created_at = 8;
@@ -65,10 +66,4 @@ message Payload {
   }
 }
 
-enum EventType {
-  EVENT_TYPE_UNSPECIFIED = 0;
-  EVENT_TYPE_CREATION = 1;
-  EVENT_TYPE_UPDATE = 2;
-  EVENT_TYPE_NEW_DEPS = 3;
-  EVENT_TYPE_PRUNE_DEPS = 4;
-}
+

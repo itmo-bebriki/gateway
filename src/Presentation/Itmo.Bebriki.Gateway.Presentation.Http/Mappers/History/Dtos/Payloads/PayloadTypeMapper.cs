@@ -1,5 +1,5 @@
-using Itmo.Bebriki.Analytics.Grpc.Contracts;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Analytics.Enums;
+using Itmo.Bebriki.Analytics;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.History.Dtos.Payloads;
 using System.ComponentModel;
 
@@ -16,7 +16,7 @@ internal static class PayloadTypeMapper
                 Title: payload.Create.Title,
                 Description: payload.Create.Description,
                 AssigneeId: payload.Create.AssigneeId,
-                Priority: JobTaskPriorityAnalyticsMapper.ToInternal(payload.Create.Priority),
+                Priority: JobTaskPriorityMapper.ToInternal(payload.Create.Priority),
                 DependsOnIds: payload.Create.DependsOnIds.ToArray(),
                 Deadline: payload.Create.Deadline?.ToDateTimeOffset(),
                 CreatedAt: payload.Create.CreatedAt.ToDateTimeOffset());
@@ -29,8 +29,8 @@ internal static class PayloadTypeMapper
                 Title: payload.Update.Title,
                 Description: payload.Update.Description,
                 AssigneeId: payload.Update.AssigneeId,
-                State: JobTaskStateAnalyticsMapper.ToInternal(payload.Update.State),
-                Priority: JobTaskPriorityAnalyticsMapper.ToInternal(payload.Update.Priority),
+                State: JobTaskStateMapper.ToInternal(payload.Update.State),
+                Priority: JobTaskPriorityMapper.ToInternal(payload.Update.Priority),
                 Deadline: payload.Update.DeadLine?.ToDateTimeOffset(),
                 IsAgreed: payload.Update.IsAgreed,
                 UpdatedAt: payload.Update.UpdatedAt.ToDateTimeOffset());

@@ -1,5 +1,5 @@
-using Itmo.Bebriki.Analytics.Grpc.Contracts;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.History.Enums;
+using Itmo.Bebriki.Analytics;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.History.Dtos;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.History.Dtos.Payloads;

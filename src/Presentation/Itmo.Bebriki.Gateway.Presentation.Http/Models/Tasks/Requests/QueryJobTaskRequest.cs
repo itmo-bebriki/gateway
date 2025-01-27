@@ -27,9 +27,6 @@ public class QueryJobTaskRequest
     [BindProperty(Name = "to_deadline")]
     public DateTimeOffset? ToDeadline { get; set; }
 
-    [BindProperty(Name = "is_agreed")]
-    public bool? IsAgreed { get; set; }
-
     [BindProperty(Name = "from_updated_at")]
     public DateTimeOffset? FromUpdatedAt { get; set; }
 
