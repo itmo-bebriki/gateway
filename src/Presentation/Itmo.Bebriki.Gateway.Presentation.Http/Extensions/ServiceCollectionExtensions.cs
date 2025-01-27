@@ -1,4 +1,5 @@
 using Itmo.Bebriki.Gateway.Presentation.Http.Clients;
+using Itmo.Bebriki.Gateway.Presentation.Http.Middlewares;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models;
 using Microsoft.Extensions.Options;
 
@@ -8,6 +9,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddGateway(this IServiceCollection services)
     {
+        services.AddScoped<GrpcExceptionHandlingMiddleware>();
+
         return services
             .AddOptions()
             .AddInternalClients()
