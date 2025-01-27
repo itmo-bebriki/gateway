@@ -7,9 +7,9 @@ namespace Itmo.Bebriki.Gateway.Presentation.Http.Clients;
 
 public class HistoryClient
 {
-    private readonly Analytics.Grpc.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient _client;
+    private readonly Analytics.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient _client;
 
-    public HistoryClient(Analytics.Grpc.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient client)
+    public HistoryClient(Analytics.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient client)
     {
         _client = client;
     }
@@ -18,7 +18,7 @@ public class HistoryClient
         GetHistoryRequest request,
         CancellationToken cancellationToken)
     {
-        Analytics.Grpc.Contracts.GetHistoryResponse response = await _client.GetHistoryAsync(
+        Analytics.Contracts.GetHistoryResponse response = await _client.GetHistoryAsync(
             GetHistoryRequestMapper.FromInternal(request),
             cancellationToken: cancellationToken);
 

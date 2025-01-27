@@ -1,5 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Enums;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;
@@ -17,7 +17,6 @@ internal static class QueryJobTaskRequestMapper
             DependsOnTaskIds = { request.DependsOnTaskIds },
             FromDeadline = request.FromDeadline?.ToTimestamp(),
             ToDeadline = request.ToDeadline?.ToTimestamp(),
-            IsAgreed = request.IsAgreed,
             FromUpdatedAt = request.FromUpdatedAt?.ToTimestamp(),
             ToUpdatedAt = request.ToUpdatedAt?.ToTimestamp(),
             Cursor = request.Cursor,

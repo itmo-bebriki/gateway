@@ -1,6 +1,6 @@
 using Google.Protobuf.WellKnownTypes;
-using Itmo.Bebriki.Analytics.Grpc.Contracts;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.History.Enums;
+using Itmo.Bebriki.Analytics.Contracts;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.History.Requests;
 

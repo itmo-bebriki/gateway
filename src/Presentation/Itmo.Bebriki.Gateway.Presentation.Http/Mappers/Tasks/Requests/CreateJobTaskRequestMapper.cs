@@ -1,5 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
-using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Enums;
+using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.Tasks.Requests;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Tasks.Requests;

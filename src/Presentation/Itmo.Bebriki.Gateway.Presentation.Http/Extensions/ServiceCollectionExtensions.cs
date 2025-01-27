@@ -9,9 +9,9 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddGateway(this IServiceCollection services)
     {
         return services
-                .AddOptions()
-                .AddInternalClients()
-                .AddGrpcClients();
+            .AddOptions()
+            .AddInternalClients()
+            .AddGrpcClients();
     }
 
     private static IServiceCollection AddOptions(this IServiceCollection services)
@@ -31,6 +31,9 @@ public static class ServiceCollectionExtensions
         services.AddOptions<ClientConfiguration>("history_service")
             .BindConfiguration("Client:Configuration:HistoryService");
 
+        services.AddOptions<ClientConfiguration>("agreement_service")
+            .BindConfiguration("Client:Configuration:AgreementService");
+
         return services;
     }
 
@@ -41,6 +44,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<TopicClient>();
         services.AddSingleton<AnalyticsClient>();
         services.AddSingleton<HistoryClient>();
+        services.AddSingleton<AgreementClient>();
 
         return services;
     }
@@ -49,33 +53,47 @@ public static class ServiceCollectionExtensions
     {
         services.AddGrpcClient<Tasks.Contracts.JobTaskService.JobTaskServiceClient>((provider, opts) =>
         {
-            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            IOptionsMonitor<ClientConfiguration> options =
+                provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("task_service").Address);
         });
 
         services.AddGrpcClient<Boards.Contracts.BoardService.BoardServiceClient>((provider, opts) =>
         {
-            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            IOptionsMonitor<ClientConfiguration> options =
+                provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("board_service").Address);
         });
 
         services.AddGrpcClient<Topics.Contracts.TopicService.TopicServiceClient>((provider, opts) =>
         {
-            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            IOptionsMonitor<ClientConfiguration> options =
+                provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("topic_service").Address);
         });
 
-        services.AddGrpcClient<Analytics.Grpc.Contracts.TaskAnalyticsService.TaskAnalyticsServiceClient>((provider, opts) =>
+        services.AddGrpcClient<Analytics.Contracts.TaskAnalyticsService.TaskAnalyticsServiceClient>((provider, opts) =>
         {
-            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+            IOptionsMonitor<ClientConfiguration> options =
+                provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
             opts.Address = new Uri(options.Get("analytics_service").Address);
         });
 
-        services.AddGrpcClient<Analytics.Grpc.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient>((provider, opts) =>
-        {
-            IOptionsMonitor<ClientConfiguration> options = provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
-            opts.Address = new Uri(options.Get("history_service").Address);
-        });
+        services.AddGrpcClient<Analytics.Contracts.HistoryAnalyticsService.HistoryAnalyticsServiceClient>(
+            (provider, opts) =>
+            {
+                IOptionsMonitor<ClientConfiguration> options =
+                    provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+                opts.Address = new Uri(options.Get("history_service").Address);
+            });
+
+        services.AddGrpcClient<Agreement.Contracts.AgreementService.AgreementServiceClient>(
+            (provider, opts) =>
+            {
+                IOptionsMonitor<ClientConfiguration> options =
+                    provider.GetRequiredService<IOptionsMonitor<ClientConfiguration>>();
+                opts.Address = new Uri(options.Get("agreement_service").Address);
+            });
 
         return services;
     }

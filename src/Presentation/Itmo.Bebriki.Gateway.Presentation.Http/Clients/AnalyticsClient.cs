@@ -1,4 +1,4 @@
-using Itmo.Bebriki.Analytics.Grpc.Contracts;
+using Itmo.Bebriki.Analytics.Contracts;
 using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Analytics.Responses;
 using GetAnalyticsResponse = Itmo.Bebriki.Gateway.Presentation.Http.Models.Analytics.Responses.GetAnalyticsResponse;
 
@@ -17,7 +17,7 @@ public class AnalyticsClient
         long id,
         CancellationToken cancellationToken)
     {
-        Analytics.Grpc.Contracts.GetAnalyticsResponse response = await _client.GetAnalyticsAsync(
+        Analytics.Contracts.GetAnalyticsResponse response = await _client.GetAnalyticsAsync(
             new GetAnalyticsRequest
             {
                 TaskId = id,
