@@ -18,6 +18,9 @@ public class GetHistoryRequest
     [BindProperty(Name = "to_timestamp")]
     public DateTimeOffset? ToTimestamp { get; set; } = DateTimeOffset.MaxValue;
 
+    [BindProperty(Name = "cursor")]
+    public long Cursor { get; set; } = -1;
+
     [Required]
     [BindProperty(Name = "page_size")]
     [Range(1, int.MaxValue)]

@@ -15,6 +15,7 @@ internal static class GetHistoryRequestMapper
             FromTimestamp = request.FromTimestamp?.ToTimestamp(),
             ToTimestamp = request.ToTimestamp?.ToTimestamp(),
             PageSize = request.PageSize,
+            Cursor = request.Cursor,
         };
     }
 }
