@@ -5,7 +5,7 @@ namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.History.Responses;
 
 internal static class GetHistoryResponseMapper
 {
-    internal static GetHistoryResponse ToInternal(Bebriki.Analytics.GetHistoryResponse response)
+    internal static GetHistoryResponse ToInternal(Bebriki.Analytics.Contracts.GetHistoryResponse response)
     {
         return new GetHistoryResponse(
             Cursor: response.Cursor,

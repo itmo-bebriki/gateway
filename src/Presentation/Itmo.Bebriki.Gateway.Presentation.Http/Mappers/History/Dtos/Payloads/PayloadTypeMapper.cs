@@ -1,4 +1,4 @@
-using Itmo.Bebriki.Analytics;
+using Itmo.Bebriki.Analytics.Contracts;
 using Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Enums;
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.History.Dtos.Payloads;
 using System.ComponentModel;

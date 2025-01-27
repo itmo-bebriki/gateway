@@ -5,7 +5,7 @@ namespace Itmo.Bebriki.Gateway.Presentation.Http.Mappers.Analytics.Responses;
 
 internal static class GetAnalyticsResponseMapper
 {
-    internal static GetAnalyticsResponse ToInternal(Itmo.Bebriki.Analytics.GetAnalyticsResponse response)
+    internal static GetAnalyticsResponse ToInternal(Itmo.Bebriki.Analytics.Contracts.GetAnalyticsResponse response)
     {
         return new GetAnalyticsResponse(
             CreatedAt: response.CreatedAt?.ToDateTimeOffset(),

@@ -1,12 +1,11 @@
 syntax = "proto3";
 
-option csharp_namespace = "Itmo.Bebriki.Analytics";
+option csharp_namespace = "Itmo.Bebriki.Analytics.Contracts";
 
 package itmo.bebriki.analytics;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
-import "analytics.proto";
 import "enums.proto";
 
 service HistoryAnalyticsService {

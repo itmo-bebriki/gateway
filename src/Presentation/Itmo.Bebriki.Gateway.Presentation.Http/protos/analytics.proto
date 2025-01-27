@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "Itmo.Bebriki.Analytics";
+option csharp_namespace = "Itmo.Bebriki.Analytics.Contracts";
 
 package itmo.bebriki.analytics;
 
