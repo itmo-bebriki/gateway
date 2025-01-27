@@ -5,7 +5,6 @@ namespace Itmo.Bebriki.Gateway.Presentation.Http.Models.Boards.Requests;
 
 public class QueryBoardRequest
 {
-    [MinLength(1)]
     [BindProperty(Name = "board_ids")]
     public long[] BoardIds { get; set; } = [];
 

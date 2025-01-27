@@ -5,7 +5,6 @@ namespace Itmo.Bebriki.Gateway.Presentation.Http.Models.Topics.Requests;
 
 public class QueryTopicRequest
 {
-    [MinLength(1)]
     [BindProperty(Name = "topic_ids")]
     public long[] TopicIds { get; set; } = [];
 
