@@ -13,7 +13,6 @@ public class CreateBoardRequest
     [BindProperty(Name = "description")]
     public string Description { get; set; } = string.Empty;
 
-    [MinLength(1)]
     [BindProperty(Name = "topic_ids")]
     public long[] TopicIds { get; set; } = [];
 }
