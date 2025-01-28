@@ -15,6 +15,15 @@ public class AnalyticsController : ControllerBase
         _client = client;
     }
 
+    /// <summary>
+    /// Returns an analytics about the task.
+    /// </summary>
+    /// <param name="id">An id of the task to fetch related analytics.</param>
+    /// <param name="cancellationToken">Token to cancel the request.</param>
+    /// <response code="200">Analytics about the task.</response>
+    /// <response code="400">If the request was ill-formed.</response>
+    /// <response code="404">If the task was not found.</response>
+    /// <response code="500">Server error.</response>
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

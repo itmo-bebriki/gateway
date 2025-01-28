@@ -1,5 +1,14 @@
 using Itmo.Bebriki.Gateway.Presentation.Http.Models.History.Dtos;
+using Itmo.Bebriki.Gateway.Presentation.Http.Swagger;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Itmo.Bebriki.Gateway.Presentation.Http.Models.History.Responses;
 
-public sealed record GetHistoryResponse(long Cursor, PayloadDto[] Payloads);
+[SwaggerSchema("Response model for fetched history events.")]
+public sealed record GetHistoryResponse(
+    [property: SwaggerSchema("An id of the last fetched event.")]
+    [property: SwaggerSchemaExample("5")]
+    long Cursor,
+
+    [property: SwaggerSchema("Fetched payloads with event content.")]
+    PayloadDto[] Payloads);
