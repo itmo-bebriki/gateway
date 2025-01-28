@@ -15,18 +15,9 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.OpenApi" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Reference Include="Microsoft.OpenApi">
-        <HintPath>..\..\..\..\..\..\..\.nuget\packages\microsoft.openapi\1.6.22\lib\netstandard2.0\Microsoft.OpenApi.dll</HintPath>
-      </Reference>
-      <Reference Include="Swashbuckle.AspNetCore.Annotations">
-        <HintPath>..\..\..\..\..\..\..\.nuget\packages\swashbuckle.aspnetcore.annotations\7.2.0\lib\net8.0\Swashbuckle.AspNetCore.Annotations.dll</HintPath>
-      </Reference>
-      <Reference Include="Swashbuckle.AspNetCore.SwaggerGen">
-        <HintPath>..\..\..\..\..\..\..\.nuget\packages\swashbuckle.aspnetcore.swaggergen\7.2.0\lib\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-    
 </Project>
