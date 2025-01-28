@@ -25,7 +25,6 @@ public class UpdateJobTaskRequest
 
     [BindProperty(Name = "priority")]
     [property: SwaggerSchema("A new priority for the job task.", Nullable = true)]
-    [property: SwaggerSchemaExample("Critical")]
     public JobTaskPriority? Priority { get; set; }
 
     [BindProperty(Name = "deadline")]

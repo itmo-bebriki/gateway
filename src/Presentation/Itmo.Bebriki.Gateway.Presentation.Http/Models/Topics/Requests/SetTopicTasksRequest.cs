@@ -1,4 +1,3 @@
-using Itmo.Bebriki.Gateway.Presentation.Http.Swagger;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
@@ -11,6 +10,5 @@ public class SetTopicTasksRequest
     [MinLength(1)]
     [BindProperty(Name = "task_ids")]
     [property: SwaggerSchema("Task IDs to update.")]
-    [property: SwaggerSchemaExample("1,2,3")]
     public long[] TaskIds { get; set; } = [];
 }

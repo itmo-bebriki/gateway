@@ -10,7 +10,6 @@ public class QueryTopicRequest
 {
     [BindProperty(Name = "topic_ids")]
     [property: SwaggerSchema("Topic IDs to fetch.")]
-    [property: SwaggerSchemaExample("1,2,3")]
     public long[] TopicIds { get; set; } = [];
 
     [BindProperty(Name = "from_updated_at")]
@@ -25,7 +24,6 @@ public class QueryTopicRequest
 
     [BindProperty(Name = "cursor")]
     [property: SwaggerSchema("A topic id to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("1")]
     public long? Cursor { get; set; }
 
     [Required]

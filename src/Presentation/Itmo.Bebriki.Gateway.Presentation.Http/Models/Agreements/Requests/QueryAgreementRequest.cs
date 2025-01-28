@@ -11,22 +11,18 @@ public sealed class QueryAgreementRequest
 {
     [BindProperty(Name = "agreements_ids")]
     [property: SwaggerSchema("Ids of agreements to queried.")]
-    [property: SwaggerSchemaExample("123,234,345")]
     public long[] AgreementIds { get; set; } = [];
 
     [BindProperty(Name = "job_task_ids")]
     [property: SwaggerSchema("Ids of job tasks to queried.")]
-    [property: SwaggerSchemaExample("100,200,300")]
     public long[] JobTaskIds { get; set; } = [];
 
     [BindProperty(Name = "states")]
     [property: SwaggerSchema("Ids of states of job tasks to queried.")]
-    [property: SwaggerSchemaExample("PendingApproval")]
     public JobTaskState[] States { get; set; } = [];
 
     [BindProperty(Name = "assignee_ids")]
     [property: SwaggerSchema("Ids of assignees to queried.")]
-    [property: SwaggerSchemaExample("1,2,3")]
     public long[] AssigneeIds { get; set; } = [];
 
     [BindProperty(Name = "from_deadline")]

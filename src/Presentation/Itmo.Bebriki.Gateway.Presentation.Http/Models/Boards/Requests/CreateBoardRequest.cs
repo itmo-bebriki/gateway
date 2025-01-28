@@ -22,6 +22,5 @@ public class CreateBoardRequest
 
     [BindProperty(Name = "topic_ids")]
     [property: SwaggerSchema("Ids of topics for the new board")]
-    [property: SwaggerSchemaExample("12,13,14")]
     public long[] TopicIds { get; set; } = [];
 }

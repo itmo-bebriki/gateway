@@ -30,12 +30,10 @@ public class CreateJobTaskRequest
     [Required]
     [BindProperty(Name = "priority")]
     [property: SwaggerSchema("An initial priority for the job task.")]
-    [property: SwaggerSchemaExample("High")]
     public JobTaskPriority Priority { get; set; }
 
     [BindProperty(Name = "depends_on_task_ids")]
     [property: SwaggerSchema("Job task dependencies.")]
-    [property: SwaggerSchemaExample("1,2")]
     public long[] DependsOnTaskIds { get; set; } = [];
 
     [Required]

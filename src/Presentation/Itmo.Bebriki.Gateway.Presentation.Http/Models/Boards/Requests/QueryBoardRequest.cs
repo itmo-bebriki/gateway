@@ -10,7 +10,6 @@ public class QueryBoardRequest
 {
     [BindProperty(Name = "board_ids")]
     [property: SwaggerSchema("Ids of boards to query.")]
-    [property: SwaggerSchemaExample("13,14")]
     public long[] BoardIds { get; set; } = [];
 
     [BindProperty(Name = "from_updated_at")]
@@ -25,7 +24,6 @@ public class QueryBoardRequest
 
     [BindProperty(Name = "cursor")]
     [property: SwaggerSchema("An id of the board to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("-1")]
     public long? Cursor { get; set; }
 
     [Required]

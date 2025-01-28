@@ -1,4 +1,3 @@
-using Itmo.Bebriki.Gateway.Presentation.Http.Swagger;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +11,5 @@ public class SetJobTaskDependenciesRequest
     [MinLength(1)]
     [BindProperty(Name = "depends_on_task_ids")]
     [property: SwaggerSchema("Ids of job task's dependencies.")]
-    [property: SwaggerSchemaExample("1,2")]
     public long[] DependsOnTaskIds { get; set; } = [];
 }

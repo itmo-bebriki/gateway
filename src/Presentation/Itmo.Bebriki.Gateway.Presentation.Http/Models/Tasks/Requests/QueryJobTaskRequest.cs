@@ -11,27 +11,22 @@ public class QueryJobTaskRequest
 {
     [BindProperty(Name = "job_task_ids")]
     [property: SwaggerSchema("Job task ids to query.")]
-    [property: SwaggerSchemaExample("1,2")]
     public long[] JobTaskIds { get; set; } = [];
 
     [BindProperty(Name = "assignee_ids")]
     [property: SwaggerSchema("Ids of assignees to query.")]
-    [property: SwaggerSchemaExample("3,4")]
     public long[] AssigneeIds { get; set; } = [];
 
     [BindProperty(Name = "states")]
     [property: SwaggerSchema("States of the job tasks to query.")]
-    [property: SwaggerSchemaExample("Approved,Rejected")]
     public JobTaskState[] States { get; set; } = [];
 
     [BindProperty(Name = "priorities")]
     [property: SwaggerSchema("Priorities of the job task to query.")]
-    [property: SwaggerSchemaExample("Low,Medium")]
     public JobTaskPriority[] Priorities { get; set; } = [];
 
     [BindProperty(Name = "depends_on_task_ids")]
     [property: SwaggerSchema("Dependencies of the job task to query.")]
-    [property: SwaggerSchemaExample("1,2,3")]
     public long[] DependsOnTaskIds { get; set; } = [];
 
     [BindProperty(Name = "from_deadline")]
@@ -56,7 +51,6 @@ public class QueryJobTaskRequest
 
     [BindProperty(Name = "cursor")]
     [property: SwaggerSchema("An ids of the job task to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("1")]
     public long? Cursor { get; set; }
 
     [Required]

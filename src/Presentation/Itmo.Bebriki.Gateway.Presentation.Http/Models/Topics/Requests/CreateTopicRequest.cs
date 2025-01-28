@@ -22,6 +22,5 @@ public class CreateTopicRequest
 
     [BindProperty(Name = "task_ids")]
     [property: SwaggerSchema("Task IDs for new topic.")]
-    [property: SwaggerSchemaExample("1,2,3")]
     public long[] TaskIds { get; set; } = [];
 }
