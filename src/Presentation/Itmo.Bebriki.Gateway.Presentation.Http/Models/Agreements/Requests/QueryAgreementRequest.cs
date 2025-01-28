@@ -47,7 +47,6 @@ public sealed class QueryAgreementRequest
 
     [BindProperty(Name = "cursor")]
     [property: SwaggerSchema("A cursor that indicates an id of agreement to query from", Nullable = true)]
-    [property: SwaggerSchemaExample("-1")]
     public long? Cursor { get; set; }
 
     [Required]
