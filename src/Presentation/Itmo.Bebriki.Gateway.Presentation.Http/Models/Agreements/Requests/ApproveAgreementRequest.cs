@@ -1,4 +1,3 @@
-using Itmo.Bebriki.Gateway.Presentation.Http.Swagger;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +11,5 @@ public sealed class ApproveAgreementRequest
     [Range(1, int.MaxValue)]
     [BindProperty(Name = "agreement_id")]
     [property: SwaggerSchema("An id of agreement to be approved.")]
-    [property: SwaggerSchemaExample("123")]
     public long AgreementId { get; set; }
 }

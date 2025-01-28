@@ -14,12 +14,10 @@ public class QueryBoardRequest
 
     [BindProperty(Name = "from_updated_at")]
     [property: SwaggerSchema("A timestamp of the last board update to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("2023-10-20T15:30:00Z")]
     public DateTimeOffset? FromUpdatedAt { get; set; }
 
     [BindProperty(Name = "to_updated_at")]
     [property: SwaggerSchema("A timestamp of the last board update to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2023-10-20T15:30:00Z")]
     public DateTimeOffset? ToUpdatedAt { get; set; }
 
     [BindProperty(Name = "cursor")]
@@ -29,6 +27,6 @@ public class QueryBoardRequest
     [Required]
     [BindProperty(Name = "page_size")]
     [property: SwaggerSchema("A page size for paged query.", Nullable = false)]
-    [property: SwaggerSchemaExample("5")]
+    [property: SwaggerSchemaExample("10")]
     public int PageSize { get; set; }
 }

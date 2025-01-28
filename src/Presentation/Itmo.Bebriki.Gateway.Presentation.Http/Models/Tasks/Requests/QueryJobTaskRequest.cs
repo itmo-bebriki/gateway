@@ -31,22 +31,18 @@ public class QueryJobTaskRequest
 
     [BindProperty(Name = "from_deadline")]
     [property: SwaggerSchema("A lower bound timestamp of deadline to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("2020-01-01T00:00:00Z")]
     public DateTimeOffset? FromDeadline { get; set; }
 
     [BindProperty(Name = "to_deadline")]
     [property: SwaggerSchema("An upper bound timestamp of deadline to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2021-01-01T00:00:00Z")]
     public DateTimeOffset? ToDeadline { get; set; }
 
     [BindProperty(Name = "from_updated_at")]
     [property: SwaggerSchema("An upper bound timestamp of last update to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2021-01-01T00:00:00Z")]
     public DateTimeOffset? FromUpdatedAt { get; set; }
 
     [BindProperty(Name = "to_updated_at")]
     [property: SwaggerSchema("An upper bound timestamp of last update to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2021-01-01T00:00:00Z")]
     public DateTimeOffset? ToUpdatedAt { get; set; }
 
     [BindProperty(Name = "cursor")]
@@ -57,6 +53,6 @@ public class QueryJobTaskRequest
     [Range(1, int.MaxValue)]
     [BindProperty(Name = "page_size")]
     [property: SwaggerSchema("A page size for paged query.")]
-    [property: SwaggerSchemaExample("5")]
+    [property: SwaggerSchemaExample("10")]
     public int PageSize { get; set; }
 }

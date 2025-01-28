@@ -27,22 +27,18 @@ public sealed class QueryAgreementRequest
 
     [BindProperty(Name = "from_deadline")]
     [property: SwaggerSchema("A lower bound date for deadline to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("2025-05-05")]
     public DateTimeOffset? FromDeadline { get; set; }
 
     [BindProperty(Name = "to_deadline")]
     [property: SwaggerSchema("An upper bound date for deadline to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2026-06-06")]
     public DateTimeOffset? ToDeadline { get; set; }
 
     [BindProperty(Name = "from_created_at")]
     [property: SwaggerSchema("A lower bound date for creation date to query from.", Nullable = true)]
-    [property: SwaggerSchemaExample("2024-04-04")]
     public DateTimeOffset? FromCreatedAt { get; set; }
 
     [BindProperty(Name = "to_created_at")]
     [property: SwaggerSchema("An upper bound date for creation date to query to.", Nullable = true)]
-    [property: SwaggerSchemaExample("2027-07-07")]
     public DateTimeOffset? ToCreatedAt { get; set; }
 
     [BindProperty(Name = "cursor")]
@@ -53,6 +49,6 @@ public sealed class QueryAgreementRequest
     [Range(1, int.MaxValue)]
     [BindProperty(Name = "page_size")]
     [property: SwaggerSchema("A page size for paginated query.")]
-    [property: SwaggerSchemaExample("5")]
+    [property: SwaggerSchemaExample("10")]
     public int PageSize { get; set; }
 }

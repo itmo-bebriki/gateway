@@ -1,4 +1,3 @@
-using Itmo.Bebriki.Gateway.Presentation.Http.Swagger;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -9,11 +8,9 @@ public class UpdateTopicRequest
 {
     [BindProperty(Name = "name")]
     [property: SwaggerSchema("A new name for the topic.")]
-    [property: SwaggerSchemaExample("new name")]
     public string? Name { get; set; }
 
     [BindProperty(Name = "description")]
     [property: SwaggerSchema("A new description for the topic.")]
-    [property: SwaggerSchemaExample("new description")]
     public string? Description { get; set; }
 }

@@ -14,12 +14,10 @@ public class QueryTopicRequest
 
     [BindProperty(Name = "from_updated_at")]
     [property: SwaggerSchema("A lower bound for timestamp of last update.", Nullable = true)]
-    [property: SwaggerSchemaExample("2025-01-01T00:00:00Z")]
     public DateTimeOffset? FromUpdatedAt { get; set; }
 
     [BindProperty(Name = "to_updated_at")]
     [property: SwaggerSchema("An upper bound for timestamp of last update.", Nullable = true)]
-    [property: SwaggerSchemaExample("2025-01-01T00:00:00Z")]
     public DateTimeOffset? ToUpdatedAt { get; set; }
 
     [BindProperty(Name = "cursor")]
@@ -30,6 +28,6 @@ public class QueryTopicRequest
     [Range(1, int.MaxValue)]
     [BindProperty(Name = "page_size")]
     [property: SwaggerSchema("A page size for paged query.")]
-    [property: SwaggerSchemaExample("5")]
+    [property: SwaggerSchemaExample("10")]
     public int PageSize { get; set; }
 }
